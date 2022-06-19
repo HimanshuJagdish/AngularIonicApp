@@ -1,0 +1,7 @@
+{
+  "name": "TrueInsure",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
