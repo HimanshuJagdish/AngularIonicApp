@@ -1,20 +1,50 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      TrueInsure
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <div style="display:flex; justify-content: center; align-items: center;">
+      <ion-card style="width: 100%;">
+        <ion-card-header>
+          <ion-card-subtitle>Total</ion-card-subtitle>
+          <ion-card-title>{{totalClients}}</ion-card-title>
+        </ion-card-header>
+      
+      </ion-card>
+    </div>
+    <div style="display:flex; justify-content: center; align-items: center;">
+      <ion-card style="flex:1">
+        <ion-card-header>
+          <ion-card-subtitle>Insured</ion-card-subtitle>
+          <ion-card-title>{{insured}}</ion-card-title>
+        </ion-card-header>
+      
+      </ion-card>
+      <!-- <ion-card style="flex:1">
+        <ion-card-header>
+          <ion-card-subtitle>New</ion-card-subtitle>
+          <ion-card-title>Card Title</ion-card-title>
+        </ion-card-header>
+      
+      </ion-card> -->
+    </div>
+    <!-- <div>
+    <ion-button color="primary" shape="round" size="large" strong="=true"  [routerLink]="['newClient']" >Add Client</ion-button>
+    <ion-button color="primary" shape="round" size="large" strong="=true" [routerLink]="['clients']">Clients</ion-button>
+  </div> -->
+    </div>
 </ion-content>
+
+<ion-footer>
+ 
+    <div style="display: flex;">
+      <ion-button style="flex:1;" color="primary"  size="large" strong="=true"  [routerLink]="['newClient']" >Add Client</ion-button>
+      <ion-button style="flex:1;" color="primary"  size="large" strong="=true" [routerLink]="['clients']">Clients</ion-button>
+    </div>
+
+</ion-footer>

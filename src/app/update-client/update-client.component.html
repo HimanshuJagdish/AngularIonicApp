@@ -1,0 +1,159 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-icon name="chevron-back-outline" [routerLink]="['']"></ion-icon>
+    <ion-title>
+      TrueInsure
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <form [formGroup]='newClientForm' (submit)="addClient()" >
+    <ion-row>
+      <ion-col>
+    <ion-item lines="full">
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="name" type="text" ></ion-input>
+    </ion-item>
+  </ion-col>
+  <ion-col>
+    <ion-item lines="full">
+      <ion-label position="floating">Mobile</ion-label>
+      <ion-input  formControlName="phoneNumber" type="text" required></ion-input>
+    </ion-item>
+  </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+    <ion-item lines="full">
+      <ion-label position="floating">Address</ion-label>
+      <ion-textarea  formControlName="address" type="text" ></ion-textarea>
+    </ion-item>
+  </ion-col>
+  </ion-row>
+
+    <ion-row>
+       <ion-col>
+        <ion-button color="danger" shape="round"  (click)="addVehicle()">ADD Vehicle</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <!-- <ion-item style="display: inherit !important;"  formArrayName="vehicle"  *ngFor="let v of vehicles.controls;let i = index" lines="full"> -->
+      <!-- <div  formArrayName="vehicle"  *ngFor="let v of vehicles.controls;let i = index" lines="full">
+      <ion-row>
+        <ion-col >
+        <ion-label >Vehicle No {{i+1}}</ion-label>
+      </ion-col>
+      <ion-col >
+         <ion-icon color="danger"  (click)="deleteVehicle(i)" name="close-circle" size="large"></ion-icon>
+        </ion-col>
+     </ion-row>
+    <ion-row [formGroupName]="i" >
+      <ion-col >
+      <ion-list >
+        <ion-item >
+          <ion-select formControlName="vehicleType" interface="popover" placeholder="Select Vehicle Type" >
+            <ion-select-option value="Two Wheeler">Two Wheeler</ion-select-option>
+            <ion-select-option value="Four Wheeler">Four Wheeler</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+   </ion-row>
+   <ion-row [formGroupName]="i" >
+    <ion-col >
+    <ion-item >
+      <ion-label position="floating">Vehicle Number</ion-label>
+      <ion-input formControlName="vehicleNumber" type="text" required autocapitalize></ion-input>
+    </ion-item>
+  </ion-col>
+  <ion-col >
+    <ion-item>
+      <ion-label position="floating">Insurance Due Date</ion-label>
+      <ion-input formControlName="insuranceDueDate" 
+        value="{{ startDate | date: 'dd-MMM-yyyy' }}"
+        id="startDate"
+        class="ion-text-end"
+        readonly="true"
+      ></ion-input>
+      <ion-popover #popover trigger="startDate" >
+        <ng-template>
+          <ion-datetime
+           #popoverDate
+            presentation="date"
+            
+            (ionChange)="startDate = popoverDate.value;popover.dismiss()"
+          ></ion-datetime>
+        </ng-template>
+      </ion-popover>
+    </ion-item>
+   
+  </ion-col>
+ </ion-row>
+   <ion-row [formGroupName]="i">
+    <ion-col  >
+      <ion-list>
+        <ion-item>
+          <ion-select formControlName="insuranceType" interface="action-sheet" placeholder="Select Insurance Type">
+            <ion-select-option value="Third-Party">Third-Party</ion-select-option>
+            <ion-select-option value="Collision Damage">Collision Damage</ion-select-option>
+            <ion-select-option value="Personal Accident Cover">Personal Accident Cover</ion-select-option>
+            <ion-select-option value="Zero Depreciation Insurance">Zero Depreciation Insurance</ion-select-option>
+            <ion-select-option value="Comprehensive Car Insurance">Comprehensive Car Insurance</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      </ion-col>
+   </ion-row>
+   <ion-row [formGroupName]="i">
+    
+    <ion-col >
+      <ion-item >
+        <ion-label position="floating">insuranceAmount</ion-label>
+        <ion-input formControlName="insuranceAmount" type="text" ></ion-input>
+      </ion-item>
+    </ion-col>
+    
+    <ion-col >
+      <ion-item >
+        <ion-label position="floating">Insurance Company</ion-label>
+        <ion-input formControlName="insurer" type="text" ></ion-input>
+      </ion-item>
+    </ion-col>
+   </ion-row>
+   <ion-row [formGroupName]="i">
+    
+    <ion-col >
+      <ion-list>
+        <ion-item>
+          <ion-select formControlName="insuredBy" interface="action-sheet" placeholder="Select Insured By">
+            <ion-select-option value="me">Me</ion-select-option>
+            <ion-select-option value="Other">Other</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      
+    </ion-col>
+   </ion-row>
+  </div> -->
+  <!-- </ion-item> -->
+   
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" shape="round">Submit</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="danger" shape="round" (click)="clearForm()" >Clear</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content> 
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>
+      Copyright @HJS
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
+    
